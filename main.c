@@ -29,11 +29,11 @@ int main() {
     while(word != EOF) {
         for(int i = 0; i < 16; i++){
             if(word[i] == '\n') {
-                i = 16;
+                for(int j = i;j<16; j++) {
+                    word[j] = '#';
+                }
             }
-            else {
-                printf("%c", word[i]);
-            } 
+            printf("%c", word[i]);
         }
         printf("\n");
         fgets(word, 16, word_file);
